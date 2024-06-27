@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Dashboard</title>
+    <link rel="stylesheet" href="style-mgr.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Manager Dashboard</h1>
+        <div class="actions">
+            <h2>Assign Department to Employee</h2>
+            <form id="assignDepartmentForm">
+                <label for="employeeId">Employee ID:</label>
+                <input type="text" id="employeeId" name="employeeId" required>
+                <label for="department">Department:</label>
+                <select id="department" name="department" required>
+                    <!-- Departments will be populated dynamically -->
+                </select>
+                <button type="submit">Assign Department</button>
+            </form>
+        </div>
+        <div class="query-management">
+            <h2>Manage Reimbursement Requests</h2>
+            <ul id="queryList">
+                {% for query in queries %}
+                <li>
+                    {{ query.description }} - ₹{{ query.amount }} - {{ query.status }}
+                    <button class="approveButton" data-id="{{ query.id }}">Approve</button>
+                    <button class="rejectButton" data-id="{{ query.id }}">Reject</button>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    <script src="script-mgr.js"></script>
+</body>
+</html>

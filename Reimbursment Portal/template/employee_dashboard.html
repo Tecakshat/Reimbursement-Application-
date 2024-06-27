@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Dashboard</title>
+    <link rel="stylesheet" href="style-emp.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <h1>Employee Dashboard</h1>
+        <div class="actions">
+            <h2>Reimbursement Requests</h2>
+            <button onclick="window.location.href='/raise_query'">Raise a New Query</button>
+            <button onclick="window.location.href='/previous_queries'">View Previous Queries</button>
+        </div>
+        <div class="query-history">
+            <h2>Previous Queries</h2>
+            <ul>
+                {% for query in queries %}
+                <li>{{ query.description }} - ₹{{ query.amount }} - {{ query.status }}</li>
+                {% Completed }
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

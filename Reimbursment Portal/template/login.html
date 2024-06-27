@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+    <div class="login-container">
+        <h1>Reimbursement Portal</h1>
+        <p>Select your login type</p>
+        <div class="login-options">
+            <button id="admin-login" class="login-btn">Login as Admin</button>
+            <button id="manager-login" class="login-btn">Login as Manager</button>
+            <button id="employee-login" class="login-btn">Login as Employee</button>
+        </div>
+        <div id="login-form-container">
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Company Email" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <a href=""><button id="myButton" type="submit">Login</button></a>
+                <!-- <a href="/employee_dashboard"><button id="myButton3" type="submit">Login</button></a> -->
+                <!-- <button type="submit" onclick="location.href = employee_pannel.html">Login</button> -->
+            </form>
+        </div>
+    </div>
+    <script src="static/js/script.js"></script>
+</body>
+</html>
